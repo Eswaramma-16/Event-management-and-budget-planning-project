@@ -1,0 +1,135 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image:url(homes.jpg);
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+}
+
+.navbar {
+    width: 100%;
+    text-align: center;
+    color:#009688;
+}
+
+.navbar h1 {
+    margin: 0;
+    font-size: 32px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+nav ul li a:hover {
+    color: #00bcd4;
+}
+
+/* Main content */
+main {
+    padding: 40px;
+    text-align: center;
+}
+
+.hero {
+    background-color: #009688;
+    color: #fff;
+    padding: 40px 20px;
+    margin-bottom: 30px;
+}
+
+.hero h2 {
+    font-size: 36px;
+    margin: 0;
+}
+
+.hero p {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.btn {
+    background-color: #00bcd4;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+.btn:hover {
+    background-color: #008c8a;
+}
+
+.features {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 40px;
+}
+
+.feature {
+    background-color: white;
+    padding: 20px;
+    width: 30%;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.feature h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.feature p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+/* How It Works Section */
+.how-it-works {
+    background-color: #eee;
+    padding: 40px 20px;
+}
+
+.how-it-works h3 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.how-it-works ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.how-it-works ul li {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}

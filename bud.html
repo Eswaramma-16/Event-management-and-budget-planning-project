@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Event Budget Planner</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f7f7f7;
+      padding: 40px;
+      margin: 0;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    .plans {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .plan-box {
+      background-color: #f0f0f0;
+      padding: 25px;
+      width: 250px;
+      border-radius: 10px;
+      text-align: center;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: all 0.3s ease;
+    }
+
+    .plan-box:hover {
+      border-color: #28a745;
+      background-color: #e9ffe9;
+    }
+
+    .plan-box h3 {
+      margin: 0;
+      font-size: 22px;
+      color: #333;
+    }
+
+    .plan-box .price {
+      font-size: 20px;
+      color: #28a745;
+      margin: 10px 0;
+      font-weight: bold;
+    }
+
+    .plan-box p {
+      font-size: 15px;
+      color: #666;
+      margin-bottom: 15px;
+    }
+
+    .plan-box ul {
+      text-align: left;
+      padding-left: 20px;
+      font-size: 14px;
+      color: #444;
+      margin: 0;
+    }
+
+    .custom-btn {
+      margin-top: 30px;
+      padding: 12px;
+      width: 100%;
+      background-color: #007bff;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .custom-btn:hover {
+      background-color: #0056b3;
+    }
+
+    @media (max-width: 768px) {
+      .plan-box {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Select Your Event Budget Plan</h2>
+    <div class="plans">
+      
+      <!-- Existing Packages -->
+      <div class="plan-box" onclick="selectBudget(400000)">
+        <h3>Essential Package</h3>
+        <div class="price">₹4,00,000</div>
+        <p>Perfect for intimate weddings with core essentials.</p>
+        <ul>
+          <li>Venue Booking</li>
+          <li>Basic Catering (Veg)</li>
+          <li>Simple Floral Decor</li>
+          <li>Photography (Basic)</li>
+        </ul>
+      </div>
+
+      <div class="plan-box" onclick="selectBudget(600000)">
+        <h3>Classic Package</h3>
+        <div class="price">₹6,00,000</div>
+        <p>Balanced and beautiful for mid-sized weddings.</p>
+        <ul>
+          <li>Decorated Venue</li>
+          <li>Veg & Non-Veg Catering</li>
+          <li>Standard Photography & Video</li>
+          <li>Bridal Makeup</li>
+        </ul>
+      </div>
+
+      <div class="plan-box" onclick="selectBudget(800000)">
+        <h3>Premium Package</h3>
+        <div class="price">₹8,00,000</div>
+        <p>Premium styling with extended services.</p>
+        <ul>
+          <li>Luxury Venue & Theme Decor</li>
+          <li>Live Music & DJ</li>
+          <li>Designer Outfits for Couple</li>
+          <li>Full Wedding Coverage</li>
+        </ul>
+      </div>
+
+      <div class="plan-box" onclick="selectBudget(1000000)">
+        <h3>Luxury Destination Package</h3>
+        <div class="price">₹10,00,000</div>
+        <p>Experience a royal wedding at an exotic location.</p>
+        <ul>
+          <li>Destination Wedding Setup</li>
+          <li>5-Star Hospitality & Meals</li>
+          <li>Pre-Wedding Shoots</li>
+          <li>Complete Event Management</li>
+        </ul>
+      </div>
+
+      <!-- New Package: Royal Heritage -->
+      <div class="plan-box" onclick="selectBudget(1200000)">
+        <h3>Royal Heritage Package</h3>
+        <div class="price">₹12,00,000</div>
+        <p>Inspired by traditional Indian royalty & palatial themes.</p>
+        <ul>
+          <li>Palace Venue or Fort Setup</li>
+          <li>Royal Procession with Elephants/Horses</li>
+          <li>Designer Decor & Lighting</li>
+          <li>Premium Cuisine with Live Counters</li>
+        </ul>
+      </div>
+
+      <!-- New Package: Ultra Luxury -->
+      <div class="plan-box" onclick="selectBudget(1500000)">
+        <h3>Ultra Luxury Elite Package</h3>
+        <div class="price">₹15,00,000</div>
+        <p>Top-tier experience for high-profile, star-style weddings.</p>
+        <ul>
+          <li>Private Island or International Venue</li>
+          <li>Celebrity Entertainment</li>
+          <li>Luxury Transport (Helicopter/Yacht)</li>
+          <li>International Cuisine & Decor Themes</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <button class="custom-btn" onclick="enterCustom()">Enter Custom Budget</button>
+  </div>
+
+  <script>
+    function selectBudget(amount) {
+      alert("You selected a budget of ₹" + Number(amount).toLocaleString());
+    }
+
+    function enterCustom() {
+      const custom = prompt("Enter your custom budget amount in ₹:");
+      if (custom && !isNaN(custom)) {
+        alert("You selected a custom budget: ₹" + Number(custom).toLocaleString());
+      } else {
+        alert("Invalid amount. Please enter a number.");
+      }
+    }
+  </script>
+
+</body>
+</html>

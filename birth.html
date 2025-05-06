@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Birthday Party Packages</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 40px;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #444;
+      margin-bottom: 40px;
+    }
+
+    .plans {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .plan-box {
+      background-color: #f0f8ff;
+      padding: 25px;
+      width: 250px;
+      border-radius: 10px;
+      text-align: center;
+      border: 2px solid transparent;
+      transition: 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      cursor: pointer;
+    }
+
+    .plan-box:hover {
+      border-color: #007bff;
+      background-color: #e6f0ff;
+    }
+
+    .plan-box h3 {
+      margin-top: 0;
+      font-size: 20px;
+      color: #333;
+    }
+
+    .plan-box .price {
+      font-size: 18px;
+      color: #007bff;
+      font-weight: bold;
+      margin: 10px 0;
+    }
+
+    .plan-box p {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 15px;
+    }
+
+    .plan-box ul {
+      text-align: left;
+      padding-left: 18px;
+      font-size: 13px;
+      color: #444;
+    }
+
+    @media (max-width: 768px) {
+      .plan-box {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Birthday Party Packages</h2>
+    <div class="plans">
+
+      <!-- Basic Package -->
+      <div class="plan-box">
+        <h3>Basic Birthday Bash</h3>
+        <div class="price">₹10,000</div>
+        <p>Perfect for small home or apartment parties.</p>
+        <ul>
+          <li>Decor & Balloons</li>
+          <li>Music System</li>
+          <li>Snacks & Cake</li>
+          <li>2-Hour Event Host</li>
+        </ul>
+      </div>
+
+      <!-- Standard Package -->
+      <div class="plan-box">
+        <h3>Standard Celebration</h3>
+        <div class="price">₹25,000</div>
+        <p>Great for mid-sized birthday parties with extra flair.</p>
+        <ul>
+          <li>Theme Decoration</li>
+          <li>Kids’ Games & Host</li>
+          <li>Photo Booth</li>
+          <li>Cake + Catering</li>
+        </ul>
+      </div>
+
+      <!-- Premium Package -->
+      <div class="plan-box">
+        <h3>Premium Party Package</h3>
+        <div class="price">₹50,000</div>
+        <p>All-in-one birthday experience for kids and adults.</p>
+        <ul>
+          <li>Venue + Theme Decor</li>
+          <li>Magician/Entertainer</li>
+          <li>DJ with Light Setup</li>
+          <li>Photography & Catering</li>
+        </ul>
+      </div>
+
+      <!-- Luxury Package -->
+      <div class="plan-box">
+        <h3>Luxury Birthday Gala</h3>
+        <div class="price">₹1,00,000+</div>
+        <p>Ultimate experience with a celebrity-style celebration.</p>
+        <ul>
+          <li>Banquet Hall/Venue</li>
+          <li>Live Music & Host</li>
+          <li>Designer Cake & Buffet</li>
+          <li>Premium Return Gifts</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>

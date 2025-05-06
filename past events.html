@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Showcase</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 32px;
+      letter-spacing: 1px;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 40px auto;
+    }
+
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .col-md-4 {
+      flex: 1 1 calc(50% - 20px);
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-align: center;
+    }
+
+    .col-md-4:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    }
+
+    .col-md-4 img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-bottom: 2px solid #eee;
+    }
+
+    .col-md-4 h5 {
+      font-size: 22px;
+      color: #222;
+      margin: 15px 0 10px;
+    }
+
+    .col-md-4 p {
+      font-size: 16px;
+      color: #555;
+      padding: 0 20px 20px;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    @media (max-width: 768px) {
+      .col-md-4 {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Event Showcase</h1>
+  </header>
+
+  <div class="container">
+    <div class="row">
+
+      <!-- Traditional South Indian Wedding -->
+      <a href="traditional-wedding.html">
+        <div class="col-md-4">
+          <img src="trad.jpg" alt="Traditional South Indian Wedding">
+          <h5>Traditional South Indian Wedding</h5>
+          <p>An elegant and culturally rich ceremony with floral decor and traditional music.</p>
+        </div>
+      </a>
+
+      <!-- Destination Beach Wedding -->
+      <a href="beach-wedding.html">
+        <div class="col-md-4">
+          <img src="beach.jpg" alt="Destination Beach Wedding">
+          <h5>Destination Beach Wedding</h5>
+          <p>A romantic beachside wedding with a modern twist and sea breeze vibes.</p>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+</body>
+</html>

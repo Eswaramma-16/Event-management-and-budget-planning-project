@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Event Registration</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f2f2f2;
+      padding: 50px;
+      margin: 0;
+    }
+
+    .container {
+      background: white;
+      max-width: 500px;
+      margin: auto;
+      padding: 40px 30px;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: 600;
+      color: #555;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 12px;
+      margin-top: 8px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 15px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 30px;
+      background-color: #28a745;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #218838;
+    }
+
+    .login-link {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 14px;
+    }
+
+    .login-link a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    .login-link a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Event Registration</h2>
+
+    <form onsubmit="registerUser(event)">
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email Address:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required>
+
+      <label for="event">Event Type:</label>
+      <select id="event" name="event" required>
+        <option value="">-- Select Event Type --</option>
+        <option value="Wedding">Wedding</option>
+        <option value="Birthday">Birthday</option>
+        <option value="Corporate">Corporate Event</option>
+        <option value="Engagement">Engagement</option>
+        <option value="Anniversary">Anniversary</option>
+      </select>
+
+      <label for="date">Event Date:</label>
+      <input type="date" id="date" name="date" required>
+
+      <button type="submit">Register</button>
+    </form>
+
+    <div class="login-link">
+      Already have an account? <a href="login.html">Login here</a>
+    </div>
+  </div>
+
+  <script>
+    function registerUser(event) {
+      event.preventDefault();
+
+      const name = document.getElementById("name").value;
+      const eventType = document.getElementById("event").value;
+
+      // Save name and eventType to localStorage for use in thankyou.html
+      localStorage.setItem("userName", name);
+      localStorage.setItem("eventType", eventType);
+
+      // Redirect to thank you page
+      window.location.href = "thankyou.html";
+    }
+  </script>
+
+</body>
+</html>

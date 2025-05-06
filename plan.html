@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Wedding Plan</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+      background: linear-gradient(135deg, #fceabb, #f8b500);
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+    }
+
+    .container {
+      background: #fff;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      max-width: 700px;
+      width: 100%;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 30px;
+    }
+
+    .plan-box {
+      border: 1px solid #ddd;
+      padding: 25px;
+      border-radius: 10px;
+      background-color: #f9f9f9;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: #007bff;
+      color: white;
+      padding: 12px 25px;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      margin-right: 10px;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #0056b3;
+    }
+
+    .btn-secondary {
+      background-color: #6c757d;
+    }
+
+    .btn-secondary:hover {
+      background-color: #495057;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Your Wedding Plan</h1>
+    <div id="plan" class="plan-box"></div>
+
+    <div id="action-buttons" style="text-align: center;">
+      <a id="thankYouBtn" class="btn" href="#">Proceed to Thank You Page</a>
+      <a id="changePlanBtn" class="btn btn-secondary" href="budget.html">Change Budget Plan</a>
+    </div>
+  </div>
+
+  <script>
+    const budget = localStorage.getItem('budget');
+    const planDiv = document.getElementById('plan');
+    const thankYouBtn = document.getElementById('thankYouBtn');
+
+    const conversionRate = 83;
+
+    const plans = {
+      low: {
+        title: "Low Budget Plan",
+        guests: 400,
+        days: 1,
+        foodItems: ["Rice", "Curry", "Sweet", "Soft Drink"],
+        extras: "Basic decoration, local venue",
+        totalCostUSD: 5000,
+      },
+      medium: {
+        title: "Medium Budget Plan",
+        guests: 800,
+        days: 2,
+        foodItems: ["Biryani", "Paneer Curry", "Chicken Fry", "Dessert", "Juices"],
+        extras: "Decor, music, moderate venue, photography",
+        totalCostUSD: 15000,
+      },
+      high: {
+        title: "High Budget Plan",
+        guests: 1300,
+        days: 3,
+        foodItems: ["Starters", "Main Course (Veg & Non-Veg)", "Multiple Desserts", "Mocktails"],
+        extras: "Luxury venue, full decoration, live music, professional photography & video",
+        totalCostUSD: 400000,
+      }
+    };
+
+    const selectedPlan = plans[budget];
+
+    if (selectedPlan) {
+      const totalCostINR = selectedPlan.totalCostUSD * conversionRate;
+
+      planDiv.innerHTML = `
+        <h2>${selectedPlan.title}</h2>
+        <p><strong>Guests:</strong> ${selectedPlan.guests}</p>
+        <p><strong>Days:</strong> ${selectedPlan.days}</p>
+        <p><strong>Food Items:</strong> ${selectedPlan.foodItems.join(', ')}</p>
+        <p><strong>Extras:</strong> ${selectedPlan.extras}</p>
+        <p><strong>Total Cost:</strong> ₹${totalCostINR.toLocaleString()}</p>
+      `;
+
+      thankYouBtn.href = "thankyou.html";
+    } else {
+      planDiv.innerHTML = "<p>Error: No plan found. Please go back and select a budget.</p>";
+      document.getElementById('action-buttons').style.display = "none";
+    }
+  </script>
+</body>
+</html>

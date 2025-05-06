@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Select Event Type</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f0f0;
+      padding: 50px;
+      text-align: center;
+    }
+
+    .container {
+      background: white;
+      padding: 40px;
+      max-width: 400px;
+      margin: auto;
+      border-radius: 10px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    select {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      margin-bottom: 30px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #218838;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Select Type of Event</h2>
+
+    <select id="eventType">
+      <option value="">-- Choose Event Type --</option>
+      <option value="wedding">Wedding</option>
+      <option value="birthday">Birthday</option>
+      <option value="corporate">Corporate Event</option>
+      <option value="engagement">Engagement</option>
+      <option value="anniversary">Anniversary</option>
+    </select>
+
+    <button onclick="goToEventPage()">Continue</button>
+  </div>
+
+  <script>
+    function goToEventPage() {
+      const eventType = document.getElementById('eventType').value;
+
+      // Mapping event types to their respective pages
+      const eventPages = {
+        wedding: 'bud.html',
+        birthday: 'birth.html',
+        corporate: 'corpo.htmrl',
+        engagement: 'engagement.html',
+        anniversary: 'anniversary.html'
+      };
+
+      if (eventPages[eventType]) {
+        window.location.href = eventPages[eventType];
+      } else {
+        alert("Please select an event type.");
+      }
+    }
+  </script>
+
+</body>
+</html>

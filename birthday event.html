@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Past Birthday Events</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #f0f8ff, #e0f7fa);
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 32px;
+      color: #2c3e50;
+    }
+
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .card {
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      width: 100%;
+      max-width: 500px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-decoration: none;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .card img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .card h5 {
+      font-size: 22px;
+      margin: 20px;
+      color: #2e4053;
+      text-align: center;
+    }
+
+    .card p {
+      font-size: 16px;
+      margin: 0 20px 20px;
+      color: #555;
+      text-align: center;
+    }
+
+    @media screen and (max-width: 768px) {
+      .row {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .card {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Past Birthday Events</h2>
+
+    <div class="row">
+
+      <!-- Past Birthday Event 1 -->
+      <a href="jungle-birthday-1.html" class="card">
+        <img src="jungle.jpg" alt="Kids’ Jungle-Themed Birthday">
+        <h5>Kids’ Jungle-Themed Birthday - 2022</h5>
+        <p>Colorful decorations, fun games, and animal-themed cakes for the little ones.</p>
+      </a>
+
+      <!-- Past Birthday Event 2 -->
+      <a href="birthday-bash-1.html" class="card">
+        <img src="21st.jpg" alt="21st Birthday Bash">
+        <h5>21st Birthday Bash - 2021</h5>
+        <p>DJ, dance floor, and neon lights for a lively night to remember.</p>
+      </a>
+
+    </div>
+  </div>
+
+</body>
+</html>

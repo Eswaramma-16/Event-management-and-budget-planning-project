@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Event Plan Details</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f7f7f7;
+      margin: 0;
+      padding: 40px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 30px;
+    }
+
+    .info p {
+      font-size: 18px;
+      color: #444;
+      margin: 10px 0;
+    }
+
+    ul {
+      padding-left: 20px;
+      color: #333;
+    }
+
+    .back-link {
+      display: block;
+      margin-top: 30px;
+      text-align: center;
+      font-size: 16px;
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Selected Package Details</h2>
+    <div class="info" id="plan-details">
+      <!-- Dynamic content will be injected here -->
+    </div>
+    <a class="back-link" href="bud.html">← Back to Budget Plans</a>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const packageName = params.get('package');
+    const amount = Number(params.get('amount'));
+
+    const packages = {
+      Essential: [
+        "Venue Booking - ₹1,00,000",
+        "Basic Catering (Veg) - ₹1,20,000",
+        "Simple Floral Decor - ₹80,000",
+        "Photography (Basic) - ₹1,00,000"
+      ],
+      Classic: [
+        "Decorated Venue - ₹1,50,000",
+        "Veg & Non-Veg Catering - ₹2,00,000",
+        "Standard Photography & Video - ₹1,20,000",
+        "Bridal Makeup - ₹1,30,000"
+      ],
+      Premium: [
+        "Luxury Venue & Theme Decor - ₹2,00,000",
+        "Live Music & DJ - ₹1,50,000",
+        "Designer Outfits for Couple - ₹2,00,000",
+        "Full Wedding Coverage - ₹2,50,000"
+      ],
+      Luxury: [
+        "Destination Setup - ₹2,50,000",
+        "5-Star Hospitality - ₹3,00,000",
+        "Pre-Wedding Shoots - ₹2,00,000",
+        "Full Event Management - ₹2,50,000"
+      ],
+      Royal: [
+        "Palace/Fort Venue - ₹3,00,000",
+        "Royal Procession - ₹2,50,000",
+        "Designer Decor & Lighting - ₹3,00,000",
+        "Live Cuisine Counters - ₹3,50,000"
+      ],
+      UltraLuxury: [
+        "Private Island/Intl Venue - ₹4,00,000",
+        "Celebrity Entertainment - ₹4,00,000",
+        "Helicopter/Yacht Transport - ₹3,00,000",
+        "Intl Cuisine & Decor - ₹4,00,000"
+      ]
+    };
+
+    const selected = packages[packageName];
+    const detailBox = document.getElementById("plan-details");
+
+    if (selected && amount) {
+      detailBox.innerHTML = `
+        <p><strong>Package Name:</strong> ${packageName}</p>
+        <p><strong>Total Budget:</strong> ₹${amount.toLocaleString()}</p>
+        <p><strong>Included Services:</strong></p>
+        <ul>${selected.map(item => `<li>${item}</li>`).join("")}</ul>
+      `;
+    } else {
+      detailBox.innerHTML = `<p style="color:red;">Invalid package or missing budget info.</p>`;
+    }
+  </script>
+</body>
+</html>

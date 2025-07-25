@@ -76,20 +76,17 @@
       margin: 0;
     }
 
-    .custom-btn {
-      margin-top: 30px;
-      padding: 12px;
-      width: 100%;
-      background-color: #007bff;
-      color: white;
+    .back-link {
+      display: block;
+      margin-top: 40px;
+      text-align: center;
       font-size: 16px;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
+      color: #007bff;
+      text-decoration: none;
     }
 
-    .custom-btn:hover {
-      background-color: #0056b3;
+    .back-link:hover {
+      text-decoration: underline;
     }
 
     @media (max-width: 768px) {
@@ -104,9 +101,8 @@
   <div class="container">
     <h2>Select Your Event Budget Plan</h2>
     <div class="plans">
-      
-      <!-- Existing Packages -->
-      <div class="plan-box" onclick="selectBudget(400000)">
+
+      <div class="plan-box" onclick="goToDetails('Essential', 400000)">
         <h3>Essential Package</h3>
         <div class="price">₹4,00,000</div>
         <p>Perfect for intimate weddings with core essentials.</p>
@@ -118,7 +114,7 @@
         </ul>
       </div>
 
-      <div class="plan-box" onclick="selectBudget(600000)">
+      <div class="plan-box" onclick="goToDetails('Classic', 600000)">
         <h3>Classic Package</h3>
         <div class="price">₹6,00,000</div>
         <p>Balanced and beautiful for mid-sized weddings.</p>
@@ -130,7 +126,7 @@
         </ul>
       </div>
 
-      <div class="plan-box" onclick="selectBudget(800000)">
+      <div class="plan-box" onclick="goToDetails('Premium', 800000)">
         <h3>Premium Package</h3>
         <div class="price">₹8,00,000</div>
         <p>Premium styling with extended services.</p>
@@ -142,7 +138,7 @@
         </ul>
       </div>
 
-      <div class="plan-box" onclick="selectBudget(1000000)">
+      <div class="plan-box" onclick="goToDetails('Luxury', 1000000)">
         <h3>Luxury Destination Package</h3>
         <div class="price">₹10,00,000</div>
         <p>Experience a royal wedding at an exotic location.</p>
@@ -154,8 +150,7 @@
         </ul>
       </div>
 
-      <!-- New Package: Royal Heritage -->
-      <div class="plan-box" onclick="selectBudget(1200000)">
+      <div class="plan-box" onclick="goToDetails('Royal', 1200000)">
         <h3>Royal Heritage Package</h3>
         <div class="price">₹12,00,000</div>
         <p>Inspired by traditional Indian royalty & palatial themes.</p>
@@ -167,8 +162,7 @@
         </ul>
       </div>
 
-      <!-- New Package: Ultra Luxury -->
-      <div class="plan-box" onclick="selectBudget(1500000)">
+      <div class="plan-box" onclick="goToDetails('UltraLuxury', 1500000)">
         <h3>Ultra Luxury Elite Package</h3>
         <div class="price">₹15,00,000</div>
         <p>Top-tier experience for high-profile, star-style weddings.</p>
@@ -182,21 +176,12 @@
 
     </div>
 
-    <button class="custom-btn" onclick="enterCustom()">Enter Custom Budget</button>
+    <a href="index.html" class="back-link">← Go to Main Planner (index.html)</a>
   </div>
 
   <script>
-    function selectBudget(amount) {
-      alert("You selected a budget of ₹" + Number(amount).toLocaleString());
-    }
-
-    function enterCustom() {
-      const custom = prompt("Enter your custom budget amount in ₹:");
-      if (custom && !isNaN(custom)) {
-        alert("You selected a custom budget: ₹" + Number(custom).toLocaleString());
-      } else {
-        alert("Invalid amount. Please enter a number.");
-      }
+    function goToDetails(packageName, amount) {
+      window.location.href = `details.html?package=${encodeURIComponent(packageName)}&amount=${amount}`;
     }
   </script>
 
